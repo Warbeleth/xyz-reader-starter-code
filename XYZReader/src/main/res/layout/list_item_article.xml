@@ -19,12 +19,9 @@
         <!--suppress AndroidLintContentDescription -->
         <com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
-            android:paddingLeft="4dp"
-            android:paddingTop="4dp"
-            android:paddingRight="4dp"
-            android:paddingBottom="4dp"
             android:layout_width="match_parent"
             android:layout_height="128dp"
+            android:scaleType="centerCrop"
             android:background="@color/photo_placeholder" />
 
         <TextView
