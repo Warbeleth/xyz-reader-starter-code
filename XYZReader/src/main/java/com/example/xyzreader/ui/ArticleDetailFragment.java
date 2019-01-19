@@ -166,8 +166,8 @@ public class ArticleDetailFragment extends Fragment implements
                     (int) (Color.green(mMutedColor) * 0.9),
                     (int) (Color.blue(mMutedColor) * 0.9));
         }
-        mStatusBarColorDrawable.setColor(color);
-        mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
+        //mStatusBarColorDrawable.setColor(color);
+        //mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
     }
 
     static float progress(float v, float min, float max) {
@@ -206,7 +206,7 @@ public class ArticleDetailFragment extends Fragment implements
         TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
 
 
-        bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
+        //bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
 
         if (mCursor != null) {
             mRootView.setAlpha(0);
@@ -220,16 +220,16 @@ public class ArticleDetailFragment extends Fragment implements
                                 publishedDate.getTime(),
                                 System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
                                 DateUtils.FORMAT_ABBREV_ALL).toString()
-                                + " by <font color='#ffffff'>"
+                                + " by " // <font color='#ffffff'>
                                 + mCursor.getString(ArticleLoader.Query.AUTHOR)
-                                + "</font>"));
+                                + "")); //"</font>"
 
             } else {
                 // If date is before 1902, just show the string
                 bylineView.setText(Html.fromHtml(
-                        outputFormat.format(publishedDate) + " by <font color='#ffffff'>"
+                        outputFormat.format(publishedDate) + " by " // + " by <font color='#ffffff'>"
                         + mCursor.getString(ArticleLoader.Query.AUTHOR)
-                                + "</font>"));
+                                + "")); //"</font>"
 
             }
             bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
@@ -239,11 +239,11 @@ public class ArticleDetailFragment extends Fragment implements
                         public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
                             Bitmap bitmap = imageContainer.getBitmap();
                             if (bitmap != null) {
-                                Palette p = Palette.generate(bitmap, 12);
-                                mMutedColor = p.getDarkMutedColor(0xFF333333);
+                                //Palette p = Palette.generate(bitmap, 12);
+                                //mMutedColor = p.getLightVibrantColor(0xFF333333);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
-                                mRootView.findViewById(R.id.meta_bar)
-                                        .setBackgroundColor(mMutedColor);
+                                //mRootView.findViewById(R.id.meta_bar)
+                                //        .setBackgroundColor(mMutedColor);
                                 updateStatusBar();
                             }
                         }

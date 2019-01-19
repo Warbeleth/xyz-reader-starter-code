@@ -27,6 +27,6 @@
     <color name="ThemeAlpha_Primary">#0088BB</color>
     <color name="ThemeAlpha_PrimaryDark">#00BBFF</color>
     <color name="ThemeAlpha_Accent">#FF5500</color>
-    <color name="ThemeAlpha_Text">#0055FF</color>
-    <color name="ThemeAlpha_Background">#000000</color>
+    <color name="ThemeAlpha_Text">#000000</color>
+    <color name="ThemeAlpha_Background">#00BBFF</color>
 </resources>

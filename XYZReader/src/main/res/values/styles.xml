@@ -20,7 +20,6 @@
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light">
         <item name="colorPrimary">@color/ThemeAlpha_Primary</item>
         <item name="colorPrimaryDark">@color/ThemeAlpha_PrimaryDark</item>
-        <item name="colorAccent">@color/ThemeAlpha_Accent</item>
         <item name="android:textColor">@color/ThemeAlpha_Text</item>
         <item name="windowNoTitle">true</item>
         <!--<item name="android:background">@color/ThemeAlpha_Background</item>-->
